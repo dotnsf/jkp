@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="utf8"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<link rel="shortcut icon" href="imgs/icon.png" type="image/png"/>
+<link rel="icon" href="imgs/icon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="imgs/icon.png"/>
+
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="apple-mobile-web-app-title" content="じゃんけんぽんマシーン"/>
+
+<title>じゃんけんぽんマシーン</title>
+<script src="js/jkp.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jkp.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3" id="win-count">
+      </div>
+      <div class="col-6" id="tie-count">
+      </div>
+      <div class="col-3" id="lose-count">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-6" id="cpu-col">
+        <img src="imgs/mark_question.png" class="cpuchoice" id="cpuchoice"/>
+      </div>
+      <div class="col-3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-6 col-offset-1" id="my-col">
+        <ul class="myslick slick-slider" style="padding: 0;">
+          <li><img src="imgs/janken_gu.png" class="mychoice slick-slide slick-active"/></li>
+          <li><img src="imgs/janken_choki.png" class="mychoice slick-slide"/></li>
+          <li><img src="imgs/janken_pa.png" class="mychoice slick-slide"/></li>
+        </ul>
+      </div>
+      <div class="col-3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-6" id="record-col">
+        <div id="my-record"></div>
+        <div id="my-msg"></div>
+        <div id="cpu-record"></div>
+      </div>
+      <div class="col-3">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

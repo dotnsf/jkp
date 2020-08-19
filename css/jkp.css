@@ -1,0 +1,52 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.cpuchoice{
+  width: 100%;
+  transform: rotate( 180deg );
+}
+.mychoice{
+  width: 100%;
+}
+.col-win{
+  background-color: green;
+}
+.col-lose{
+  background-color: red;
+}
+.col-tie{
+  background-color: yellow;
+}
+#cpu-record{
+  text-align: center;
+  color: red;
+}
+#my-record{
+  text-align: center;
+  color: green;
+}
+#my-msg{
+  text-align: center;
+  font-weight: bold;
+}
+#win-count{
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  font-size: 40px;
+}
+#tie-count{
+  text-align: center;
+  color: yellow;
+  font-weight: bold;
+  font-size: 40px;
+}
+#lose-count{
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 40px;
+}
