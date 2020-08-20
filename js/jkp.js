@@ -7,6 +7,7 @@ var win_count = 0;
 var lose_count = 0;
 var tie_count = 0;
 var slicked = true;
+var mychart = null;
 $(function(){
   $('.myslick').slick({
     //centerMode: true,
@@ -42,12 +43,14 @@ $(function(){
 
           count = 0;
           tie_count ++;
+          //mychart.config.data.datasets[1].data[0] ++;
         }else if( my_choice_index == 0 && cpu_choice_index == 2 
         || my_choice_index == 1 && cpu_choice_index == 0
         || my_choice_index == 2 && cpu_choice_index == 1 ){
           $('#cpu-col').addClass( 'col-win' );
           $('#my-col').addClass( 'col-lose' );
           lose_count ++;
+          //mychart.config.data.datasets[2].data[0] ++;
 
           if( count > 0 ){
             count = -1;
@@ -62,6 +65,7 @@ $(function(){
           $('#cpu-col').addClass( 'col-lose' );
           $('#my-col').addClass( 'col-win' );
           win_count ++;
+          //mychart.config.data.datasets[0].data[0] ++;
   
           if( count > 0 ){
             count ++;
@@ -79,7 +83,11 @@ $(function(){
       $('#tie-count').html( tie_count + '分' );
       $('#lose-count').html( lose_count + '敗' );
 
-      console.log( count, min_count, max_count );
+      if( mychart ){
+        mychart.destroy();
+      }
+      drawChart( win_count, tie_count, lose_count );
+
       $('#my-msg').html( '' );
       if( count > 0 ){
         var msg = count + '連勝中';
@@ -92,6 +100,49 @@ $(function(){
     }
   });
 });
+
+function drawChart( win, tie, lose ){
+  var _mychart = document.getElementById( 'mychart' );
+  mychart = new Chart( _mychart, {
+    type: 'horizontalBar',
+    data: {
+      labels: [ ' ' ],
+      datasets: [
+        {
+          label: '勝',
+          data: [ win ],
+          backgroundColor: '#00ff00'
+        },
+        {
+          label: '分',
+          data: [ tie ],
+          backgroundColor: '#ffff00'
+        },
+        {
+          label: '敗',
+          data: [ lose ],
+          backgroundColor: '#ff0000'
+        }
+      ]
+    },
+    options: {
+      legend: false,
+      scales: {
+        xAxes: [{
+          scaleLabel: {
+            display: false,
+          },
+          stacked: true
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      },
+      responsive: true
+    }
+  });
+  console.log( mychart );
+}
 
 function int2img( n ){
   var img = './imgs/janken_' + janken[n] + '.png';
